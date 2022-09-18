@@ -8,8 +8,6 @@ for (let letter of lettersU) {
   lettersL.push(letter.toLowerCase());
 }
 
-
-
 console.log(lettersU, lettersL);
 console.log(specialCharacters);
 console.log(numbers);
@@ -50,7 +48,8 @@ var resultOfUserCharacters = ''
 
 
  for (var i = 0; i < characterPromptResponse; i++){
-  resultOfUserCharacters += (Math.floor(Math.random() * ))
+  resultOfUserCharacters += (Math.floor(Math.random() * characterPromptResponse)
+  )
  }
  
  return resultOfUserCharacters;
