@@ -4,6 +4,8 @@ var lettersU = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
 var lettersL = []
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '<', '>', '?', '~', '/']
 var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+var characterPromptInput =[];
+var characterPromptInputLength = characterPromptInput.length;
 for (let letter of lettersU) {
   lettersL.push(letter.toLowerCase());
 }
@@ -13,51 +15,47 @@ console.log(specialCharacters);
 console.log(numbers);
 
 
-function generatePassword(characterPromptResponse) {
-  var characterPrompt = window.prompt("How many characters would you like for your password?", 'must be 8-128 characters');
-  var characterPromptResponse = parseInt(characterPrompt);
-  var criteriaInput = ""
-  var characterPromptInput = []
-  if (characterPromptResponse < 8) {
-    alert("password must be more than 8 characters");
-  }
-  else if (characterPromptResponse > 128) {
-    alert("password must be less than 128 characters");
+function generatePassword() {
+
+  var characterPromptResponse = parseInt(prompt("How many characters would you like for your password?", 'must be 8-128 characters'));
+
+  if (characterPromptResponse < 8 || characterPromptResponse > 128) {
+    alert("password must be more than 8 characters and less than 128 characters")
   }
   else {
-    window.confirm("Click OK to confirm uppercase letters");
-    if (criteriaInput = true) {
-      characterPromptInput.push(lettersU);
-    }
-    window.confirm("click OK to confirm lowercase letters");
-    if (criteriaInput = true) {
-      characterPromptInput.push(lettersL);
-    }
-    window.confirm("click OK to confirm special characters");
-    if (criteriaInput = true) {
-      characterPromptInput.push(specialCharacters);
-    }
-    window.confirm("click OK to confirm numbers");
-    if (criteriaInput = true) {
-      characterPromptInput.push(numbers);
-    }
+  var userConfirmUppercase = window.confirm("Click OK to confirm uppercase letters");
+  if (userConfirmUppercase == true) {
+    characterPromptInput +=lettersU;
   }
- console.log(characterPromptResponse);
- console.log(characterPromptInput);
- 
-var resultOfUserCharacters = ''
+  var userConfirmLowercase = window.confirm("click OK to confirm lowercase letters");
+  if (userConfirmLowercase == true) {
+    characterPromptInput += lettersL;
+  }
+  var userConfirmSpecialChar = window.confirm("click OK to confirm special characters");
+  if (userConfirmSpecialChar == true) {
+    characterPromptInput += specialCharacters;
+  }
+  var userConfirmNumbers = window.confirm("click OK to confirm numbers");
+  if (userConfirmNumbers == true) {
+    characterPromptInput += numbers;
+  }
+}
+console.log(characterPromptInput);
 
+var resultOfUserCharacters = '';
 
- for (var i = 0; i < characterPromptResponse; i++){
+ for (var i = 0; i < characterPromptInputLength; i++){
   resultOfUserCharacters += (Math.floor(Math.random() * characterPromptResponse)
   )
  }
- 
  return resultOfUserCharacters;
- }
+}
 
 
-  // return allPasswordCharacters[Math.floor(Math.random() * allPasswordCharacters.length)]
+
+
+
+// return allPasswordCharacters[Math.floor(Math.random() * allPasswordCharacters.length)]
 // return variable with random generated password
 
 
