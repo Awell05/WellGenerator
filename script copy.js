@@ -41,7 +41,7 @@ function generatePassword() {
   }
 }
 console.log(characterPromptInput);
-
+// need help generating password with for loop
 var resultOfUserCharacters = '';
 
  for (var i = 0; i < characterPromptInputLength; i++){
