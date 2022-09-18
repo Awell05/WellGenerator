@@ -15,10 +15,10 @@ console.log(specialCharacters);
 console.log(numbers);
 
 
-function generatePassword() {
+function generatePassword(characterPromptResponse) {
   var characterPrompt = window.prompt("How many characters would you like for your password?", 'must be 8-128 characters');
-  var characterPromptResponse = parseInt(characterPrompt);
-  var allPasswordCharacters = [lettersU, lettersL, specialCharacters, numbers];
+  var characterPromptResponse = parseInt(characterPrompt);;
+  var characterPromptInput = []
   if (characterPromptResponse < 8) {
     alert("password must be more than 8 characters");
   }
@@ -27,23 +27,37 @@ function generatePassword() {
   }
   else {
     window.confirm("Click OK to confirm uppercase letters");
+    if (characterPromptResponse = true) {
+      characterPromptInput.push(lettersU);
+    }
     window.confirm("click OK to confirm lowercase letters");
+    if (characterPromptResponse = true) {
+      characterPromptInput.push(lettersL);
+    }
     window.confirm("click OK to confirm special characters");
+    if (characterPromptResponse = true) {
+      characterPromptInput.push(specialCharacters);
+    }
     window.confirm("click OK to confirm numbers");
+    if (characterPromptResponse = true) {
+      characterPromptInput.push(numbers);
+    }
   }
  console.log(characterPromptResponse);
+ console.log(characterPromptInput);
  
- for (var i =0; i < allPasswordCharacters; i++){
-  characterPromptResponse += allPasswordCharacters.charAt(Math.floor(Math.random() * allPasswordCharacters))
+var resultOfUserCharacters = ''
+
+
+ for (var i = 0; i < characterPromptResponse; i++){
+  resultOfUserCharacters += (Math.floor(Math.random() * ))
  }
  
- return{}
+ return resultOfUserCharacters;
  }
 
 
   // return allPasswordCharacters[Math.floor(Math.random() * allPasswordCharacters.length)]
-  
-// function needs prompt for length of characters, uppercase letters, lowercase letters, special characters, numers)
 // return variable with random generated password
 
 
