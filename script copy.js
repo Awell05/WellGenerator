@@ -15,7 +15,8 @@ console.log(numbers);
 
 function generatePassword(characterPromptResponse) {
   var characterPrompt = window.prompt("How many characters would you like for your password?", 'must be 8-128 characters');
-  var characterPromptResponse = parseInt(characterPrompt);;
+  var characterPromptResponse = parseInt(characterPrompt);
+  var criteriaInput = ""
   var characterPromptInput = []
   if (characterPromptResponse < 8) {
     alert("password must be more than 8 characters");
@@ -25,19 +26,19 @@ function generatePassword(characterPromptResponse) {
   }
   else {
     window.confirm("Click OK to confirm uppercase letters");
-    if (characterPromptResponse = true) {
+    if (criteriaInput = true) {
       characterPromptInput.push(lettersU);
     }
     window.confirm("click OK to confirm lowercase letters");
-    if (characterPromptResponse = true) {
+    if (criteriaInput = true) {
       characterPromptInput.push(lettersL);
     }
     window.confirm("click OK to confirm special characters");
-    if (characterPromptResponse = true) {
+    if (criteriaInput = true) {
       characterPromptInput.push(specialCharacters);
     }
     window.confirm("click OK to confirm numbers");
-    if (characterPromptResponse = true) {
+    if (criteriaInput = true) {
       characterPromptInput.push(numbers);
     }
   }
