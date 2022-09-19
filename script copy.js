@@ -44,10 +44,9 @@ console.log(characterPromptInput);
 // need help generating password with for loop
 var resultOfUserCharacters = '';
 
- for (var i = 0; i < characterPromptInputLength; i++){
-  resultOfUserCharacters += (Math.floor(Math.random() * characterPromptResponse)
-  )
- }
+ for (var i = 0; i < characterPromptResponse; i++){
+  resultOfUserCharacters += (Math.floor(Math.random() * characterPromptInputLength)
+  )}
  return resultOfUserCharacters;
 }
 
