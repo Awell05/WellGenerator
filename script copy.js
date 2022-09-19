@@ -5,7 +5,6 @@ var lettersL = []
 var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '<', '>', '?', '~', '/']
 var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 var characterPromptInput =[];
-var characterPromptInputLength = characterPromptInput.length;
 for (let letter of lettersU) {
   lettersL.push(letter.toLowerCase());
 }
@@ -16,7 +15,7 @@ console.log(numbers);
 
 
 function generatePassword() {
-
+  let generatePassword = "";
   var characterPromptResponse = parseInt(prompt("How many characters would you like for your password?", 'must be 8-128 characters'));
 
   if (characterPromptResponse < 8 || characterPromptResponse > 128) {
@@ -25,28 +24,28 @@ function generatePassword() {
   else {
   var userConfirmUppercase = window.confirm("Click OK to confirm uppercase letters");
   if (userConfirmUppercase == true) {
-    characterPromptInput +=lettersU;
+    characterPromptInput = characterPromptInput.concat(lettersU);
   }
   var userConfirmLowercase = window.confirm("click OK to confirm lowercase letters");
   if (userConfirmLowercase == true) {
-    characterPromptInput += lettersL;
+    characterPromptInput = characterPromptInput.concat(lettersL);
   }
   var userConfirmSpecialChar = window.confirm("click OK to confirm special characters");
   if (userConfirmSpecialChar == true) {
-    characterPromptInput += specialCharacters;
+    characterPromptInput = characterPromptInput.concat(specialCharacters);
   }
   var userConfirmNumbers = window.confirm("click OK to confirm numbers");
   if (userConfirmNumbers == true) {
-    characterPromptInput += numbers;
+    characterPromptInput = characterPromptInput.concat(numbers);
   }
 }
 console.log(characterPromptInput);
 // need help generating password with for loop
-var resultOfUserCharacters = '';
+var resultOfUserCharacters = "";
 
  for (var i = 0; i < characterPromptResponse; i++){
-  resultOfUserCharacters += (Math.floor(Math.random() * characterPromptInputLength)
-  )}
+  resultOfUserCharacters += (Math.floor(Math.random() * characterPromptResponse));
+  }
  return resultOfUserCharacters;
 }
 
