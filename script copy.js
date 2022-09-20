@@ -13,12 +13,11 @@ console.log(lettersU, lettersL);
 console.log(specialCharacters);
 console.log(numbers);
 
-
+// function to generate password
 function generatePassword() {
-  let generatePassword = "";
-  var characterPromptResponse = parseInt(prompt("How many characters would you like for your password?", 'must be 8-128 characters'));
+  var characterPasswordLength= parseInt(prompt("How many characters would you like for your password?", 'must be 8-128 characters'));
 
-  if (characterPromptResponse < 8 || characterPromptResponse > 128) {
+  if (characterPasswordLength < 8 || characterPasswordLength > 128) {
     alert("password must be more than 8 characters and less than 128 characters")
   }
   else {
@@ -40,21 +39,16 @@ function generatePassword() {
   }
 }
 console.log(characterPromptInput);
-// need help generating password with for loop
+// For loop to generate random password
 var resultOfUserCharacters = "";
 
- for (var i = 0; i < characterPromptResponse; i++){
-  resultOfUserCharacters += (Math.floor(Math.random() * characterPromptResponse));
+for (var i = 0; i < characterPasswordLength; i++){
+
+  resultOfUserCharacters += characterPromptInput[(Math.floor(Math.random() * characterPromptInput.length))];
   }
  return resultOfUserCharacters;
 }
 
-
-
-
-
-// return allPasswordCharacters[Math.floor(Math.random() * allPasswordCharacters.length)]
-// return variable with random generated password
 
 
 // Write password to the #password input
